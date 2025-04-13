@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Sweetheart 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom right, #ffd6e8, #ffe6f2);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #d63384;
+      margin-bottom: 0.3em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      color: #6f42c1;
+      font-size: 1.2em;
+      margin-bottom: 1em;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .her-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ffb6c1;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+      animation: fadeIn 2.5s ease-in-out;
+      margin-bottom: 1em;
+    }
+
+    .floating-heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      opacity: 0.6;
+      transform: rotate(45deg);
+      animation: floatHeart 8s infinite linear;
+    }
+
+    .floating-heart::before,
+    .floating-heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .floating-heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .floating-heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>You're My Sunshine ☀️</h1>
+  <img src="cutie.jpg" alt="Her Photo" class="her-photo">
+  <p>Even on your roughest days, you're the most beautiful soul I know 💕<br>
+    I'm right here, sending you love and hugs every second 💗</p>
+  <footer>Made with love just for you 🌷</footer>
+
+  <!-- Floating hearts script -->
+  <script>
+    for(let i = 0; i < 20; i++) {
+      let heart = document.createElement("div");
+      heart.classList.add("floating-heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 6) + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+  <button><a href="index3.html">NEXT<a></button>
+</body>
+</html>

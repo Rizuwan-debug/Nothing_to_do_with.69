@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Love 💕</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top right, #fce4ec, #f3e5f5);
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      cursor: none;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #d81b60;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    p {
+      font-size: 1.4em;
+      color: #6a1b9a;
+      max-width: 80%;
+      margin-top: 20px;
+      animation: fadeIn 1.5s ease-in-out 0.5s forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4d6d;
+      transform: rotate(45deg);
+      animation: floatHeart 1s ease-out forwards;
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4d6d;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: -10px;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) scale(1) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-50px) scale(1.5) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Hey Babe ❤️</h1>
+    <p>
+      Just a little surprise for you ✨<br>
+      This is your space, made with love and smiles 💫<br>
+      You're strong, beautiful, and amazing — always remember that 💐
+    </p>
+  </div>
+
+  <script>
+    function createHeart(x, y) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = x - 10 + "px";
+      heart.style.top = y - 10 + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 1000);
+    }
+
+    // Mouse support
+    document.addEventListener("mousemove", (e) => {
+      createHeart(e.clientX, e.clientY);
+    });
+
+    // Touch support
+    document.addEventListener("touchmove", (e) => {
+      for (let i = 0; i < e.touches.length; i++) {
+        createHeart(e.touches[i].clientX, e.touches[i].clientY);
+      }
+    });
+  </script>
+  <button><a href="index.html">NEXT<a></button>
+</body>
+</html>
